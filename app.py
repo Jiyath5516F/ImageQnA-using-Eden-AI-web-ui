@@ -13,7 +13,7 @@ def home():
         url = request.form.get('url')
         question = request.form.get('question')
 
-        headers = {"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiOTE1MWNmYzYtYWQwOC00Zjc2LWIxYTUtOTMzNTRjNjFjYjQ3IiwidHlwZSI6ImFwaV90b2tlbiJ9.qJQZLQ-NGbFB2xa-TQdt8I6SldcI0epsAfAXxiSm_k8"}
+        headers = {"Authorization": "Bearer EDEN_API_KEY"}
         api_url = "https://api.edenai.run/v2/image/question_answer"
         data = {
             "providers": "openai",
