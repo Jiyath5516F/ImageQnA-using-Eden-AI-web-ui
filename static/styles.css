@@ -1,0 +1,50 @@
+body {
+    font-family: 'popins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
+#loading {
+    display: none;
+}
+
+form {
+    
+    display: block;
+    margin: 20px 0;
+}
+
+input {
+    font-family: 'popins', sans-serif;
+    margin: 10px 0;
+    padding: 10px;
+    width: 8rem;
+    text-align: center;
+}
+
+button {
+    font-family: 'popins', sans-serif;
+    margin: 10px 0;
+    padding: 10px;
+    width: 8rem;
+    text-align: center;
+}
+img {
+    margin: 20px 0;
+}
+
+p {
+    text-align: center;
+}
+
+.url_img {
+    width: 250px;
+    display: block;
+    border-radius: 5px;
+    margin: 20px auto;
+}

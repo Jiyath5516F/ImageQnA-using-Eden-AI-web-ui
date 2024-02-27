@@ -1,0 +1,48 @@
+<!-- HTML -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Q&A</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script>
+        function updateImage() {
+            var url = document.getElementById('url').value;
+            var img = document.getElementById('img');
+            img.src = url;
+            localStorage.setItem('url', url);  // Store the URL in localStorage
+        }
+
+        function showLoading() {
+            var loading = document.getElementById('loading');
+            loading.style.display = 'block';
+        }
+
+        function deleteUrl() {
+            document.getElementById('url').value = '';
+            document.getElementById('img').src = '';
+            localStorage.removeItem('url');  // Remove the URL from localStorage
+        }
+
+        window.onload = function() {
+            var url = localStorage.getItem('url');  // Get the URL from localStorage
+            if (url) {
+                document.getElementById('url').value = url;
+                document.getElementById('img').src = url;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form method="POST" onsubmit="showLoading()">
+        <input type="text" id="url" name="url" placeholder="Image URL" onchange="updateImage()">
+        <button type="button" onclick="deleteUrl()">Remove URL</button> <br>
+        <input type="text" name="question" placeholder="Ask a question...">
+        <input type="submit" value="Ask">
+    </form>
+    <img class="url_img" id="img" src="" alt="Image" style="max-width: 100%;">
+    <p id="loading">Loading...</p>
+    {% if answer %}
+    <p>{{ answer }}</p>
+    {% endif %}
+</body>
+</html>
